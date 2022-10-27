@@ -19,12 +19,14 @@ public class DataProxy {
     static {
         load();
     }
-    public static void save() {
+    public static byte save() {
+        byte result = 0;
         var name = "backups/backup"+System.currentTimeMillis()+".save";
-        save.save(new File(name), book);
+        if(save.save(new File(name), book)) result+=1;
         System.out.println(System.currentTimeMillis() +" INFO: "+name+" has been saved");
-        save.save(new File(DEFAULT_SAVE_NAME), book);
+        if(save.save(new File(DEFAULT_SAVE_NAME), book)) result+=2;
         System.out.println(System.currentTimeMillis() +" INFO: "+DEFAULT_SAVE_NAME+" has been saved");
+        return result;
     }
     public static boolean load() {
         book = save.load(new File(DEFAULT_SAVE_NAME));
@@ -44,7 +46,7 @@ public class DataProxy {
     }
     public static boolean insert(String name) {
         try {
-            String text = new BufferedInputStream(new FileInputStream(name)).readAllBytes().toString();
+            String text = new String(new BufferedInputStream(new FileInputStream(name)).readAllBytes());
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             try {
@@ -64,7 +66,7 @@ public class DataProxy {
     }
     public static boolean remove(String name) {
         try {
-            String text = new BufferedInputStream(new FileInputStream(name)).readAllBytes().toString();
+            String text = new String(new BufferedInputStream(new FileInputStream(name)).readAllBytes());
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
             try {
@@ -91,5 +93,22 @@ public class DataProxy {
             b.insert(book.getPages().get(i));
         }
         return b;
+    }
+    public static boolean save(List<Integer> indexes, String name, String fileName) {
+        return save.save(new File(fileName+".book"), getBook(indexes, name));
+    }
+    public static boolean save(int index, String filename) {
+        try {
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(filename+".page"));
+            out.write(gson.toJson(book.getPages().get(index)).getBytes());
+            out.flush();
+            out.close();
+            return true;
+        } catch (Exception e) {
+            System.err.println(System.currentTimeMillis() +" ERROR: "+"couldn't wrote to file"+filename+".page\n"+e.getLocalizedMessage());
+            return false;
+        }
     }
 }

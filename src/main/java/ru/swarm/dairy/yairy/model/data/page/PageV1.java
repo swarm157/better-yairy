@@ -2,6 +2,8 @@ package ru.swarm.dairy.yairy.model.data.page;
 
 import ru.swarm.dairy.yairy.model.data.CommonMethods;
 
+import java.util.Objects;
+
 import static java.lang.System.getProperty;
 
 public class PageV1 implements Page {
@@ -200,5 +202,18 @@ public class PageV1 implements Page {
                 ", version=" + version +
                 ", textVersion=" + textVersion +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PageV1)) return false;
+        PageV1 pageV1 = (PageV1) o;
+        return getCreationDate() == pageV1.getCreationDate() && getVersion() == pageV1.getVersion() && getTextVersion() == pageV1.getTextVersion() && text.equals(pageV1.text) && getFake().equals(pageV1.getFake()) && getCreator().equals(pageV1.getCreator()) && getName().equals(pageV1.getName()) && lastEditor.equals(pageV1.lastEditor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCreator(), getName(), lastEditor, getCreationDate(), getVersion(), getTextVersion());
     }
 }

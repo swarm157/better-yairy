@@ -7,6 +7,7 @@ import ru.swarm.dairy.yairy.model.data.page.PageV1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static java.lang.System.getProperty;
 
@@ -229,5 +230,18 @@ public class BookV1 implements Book{
                 ", version=" + version +
                 ", textVersion=" + textVersion +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BookV1)) return false;
+        BookV1 bookV1 = (BookV1) o;
+        return getCreationDate() == bookV1.getCreationDate() && getVersion() == bookV1.getVersion() && getTextVersion() == bookV1.getTextVersion() && getCreator().equals(bookV1.getCreator()) && getName().equals(bookV1.getName()) && Objects.equals(getPages(), bookV1.getPages()) && Objects.equals(pagesGson, bookV1.pagesGson) && lastEditor.equals(bookV1.lastEditor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCreator(), getName(), getCreationDate(), lastEditor, getVersion(), getTextVersion());
     }
 }
