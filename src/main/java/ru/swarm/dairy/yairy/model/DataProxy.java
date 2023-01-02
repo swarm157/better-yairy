@@ -17,7 +17,7 @@ public class DataProxy {
     private static Book book;
     private final static String DEFAULT_SAVE_NAME = "yairy.save";
     static {
-        load();
+         log(load());
     }
     public static byte save() {
         byte result = 0;
@@ -110,5 +110,8 @@ public class DataProxy {
             System.err.println(System.currentTimeMillis() +" ERROR: "+"couldn't wrote to file"+filename+".page\n"+e.getLocalizedMessage());
             return false;
         }
+    }
+    public static void log(Object text) {
+        System.out.println(System.currentTimeMillis() +" INFO: "+text);
     }
 }
