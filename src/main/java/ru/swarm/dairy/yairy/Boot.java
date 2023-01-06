@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.security.Security;
 
 public class Boot extends Application {
-
     @Override
     public void init() {
 

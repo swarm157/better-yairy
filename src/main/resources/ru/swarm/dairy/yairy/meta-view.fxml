@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.swarm.dairy.yairy.control.controllers.MetaController">
+   <children>
+      <Button fx:id="ok" layoutX="225.0" layoutY="285.0" mnemonicParsing="false" text="Ok" />
+      <TextArea fx:id="area" layoutX="31.0" layoutY="28.0" prefHeight="200.0" prefWidth="230.0" />
+      <TextField fx:id="name" layoutX="31.0" layoutY="243.0" prefHeight="24.0" prefWidth="230.0" />
+      <Label layoutX="266.0" layoutY="247.0" text="Page's name" />
+      <Label layoutX="219.0" layoutY="344.0" text="Creator" />
+      <Label layoutX="219.0" layoutY="368.0" text="Creation time" />
+      <Label layoutX="219.0" layoutY="402.0" text="UID" />
+      <Label layoutX="216.0" layoutY="447.0" text="Text's version" />
+      <Button fx:id="cancel" layoutX="153.0" layoutY="285.0" mnemonicParsing="false" text="Cancel" />
+      <Label fx:id="author" layoutX="30.0" layoutY="344.0" prefHeight="16.0" prefWidth="164.0" text="Author" />
+      <Label fx:id="creationTime" layoutX="31.0" layoutY="368.0" prefHeight="16.0" prefWidth="164.0" text="Time" />
+      <Label fx:id="uid" layoutX="30.0" layoutY="402.0" prefHeight="16.0" prefWidth="164.0" text="UID's value" />
+      <Label fx:id="textVersion" layoutX="30.0" layoutY="447.0" prefHeight="16.0" prefWidth="164.0" text="Text version" />
+      <Label fx:id="version" layoutX="30.0" layoutY="483.0" prefHeight="16.0" prefWidth="164.0" text="Version" />
+      <Label layoutX="216.0" layoutY="483.0" text="Page's version" />
+      <Label layoutX="268.0" layoutY="120.0" text="Fake" />
+   </children>
+</AnchorPane>

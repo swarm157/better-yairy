@@ -191,7 +191,7 @@ public class BookV1 implements Book{
 
     @Override
     public List<Page> getPages() {
-
+        if (pages==null) pages = new ArrayList<>();
         return pages;
     }
 
