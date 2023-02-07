@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="240.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.swarm.dairy.yairy.control.controllers.ReplaceController">
+   <children>
+      <TextField fx:id="from" layoutX="19.0" layoutY="65.0" />
+      <TextField fx:id="to" layoutX="19.0" layoutY="122.0" />
+      <Label layoutX="210.0" layoutY="69.0" text="from" />
+      <Label layoutX="210.0" layoutY="126.0" text="to" />
+      <Button fx:id="cancel" layoutX="151.0" layoutY="192.0" mnemonicParsing="false" text="Cancel" />
+      <Button fx:id="ok" layoutX="220.0" layoutY="192.0" mnemonicParsing="false" text="Ok" />
+      <Label layoutX="46.0" layoutY="23.0" text="Please, enter data to replace" />
+      <CheckBox fx:id="globalReplacing" layoutX="19.0" layoutY="167.0" mnemonicParsing="false" text="Global replacing" />
+   </children>
+</AnchorPane>

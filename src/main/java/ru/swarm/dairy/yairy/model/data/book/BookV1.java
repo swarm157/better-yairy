@@ -2,6 +2,7 @@ package ru.swarm.dairy.yairy.model.data.book;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import ru.swarm.dairy.yairy.model.DataProxy;
 import ru.swarm.dairy.yairy.model.data.page.Page;
 import ru.swarm.dairy.yairy.model.data.page.PageV1;
 
@@ -147,7 +148,9 @@ public class BookV1 implements Book{
     public void insert(Book book) {
         lastEditor = getProperty("user.name");
         textVersion = System.currentTimeMillis();
+
         for (Page page : book.getPages()) {
+            DataProxy.log(page);
             pages.add((PageV1) page);
         }
     }
@@ -156,6 +159,7 @@ public class BookV1 implements Book{
     public void insert(Page page) {
         lastEditor = getProperty("user.name");
         textVersion = System.currentTimeMillis();
+
         pages.add((PageV1) page);
     }
 

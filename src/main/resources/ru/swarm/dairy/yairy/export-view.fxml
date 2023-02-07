@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="465.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.swarm.dairy.yairy.control.controllers.ExportController">
+   <children>
+      <Button fx:id="ok" layoutX="276.0" layoutY="434.0" mnemonicParsing="false" text="Ok" />
+      <Button fx:id="cancel" layoutX="211.0" layoutY="434.0" mnemonicParsing="false" text="Cancel" />
+      <CheckBox fx:id="separatelySaving" layoutX="14.0" layoutY="437.0" mnemonicParsing="false" text="Separately saving" />
+      <TextField fx:id="path" layoutX="147.0" layoutY="401.0" />
+      <Label layoutX="14.0" layoutY="405.0" text="Path to save file(s)" />
+      <ListView fx:id="list" layoutX="14.0" layoutY="14.0" prefHeight="384.0" prefWidth="295.0" />
+   </children>
+</AnchorPane>

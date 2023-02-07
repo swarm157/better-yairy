@@ -5,18 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0" spacing="8.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.swarm.dairy.yairy.control.controllers.MainController">
+<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0" spacing="8.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.swarm.dairy.yairy.control.controllers.MainController">
     <padding>
         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
     </padding>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <MenuBar prefHeight="27.0" prefWidth="80.0">
-              <menus>
-                <Menu fx:id="actions" mnemonicParsing="false" text="Actions" />
-              </menus>
-            </MenuBar>
             <Button fx:id="undo" mnemonicParsing="false" text="&lt;" />
             <Button fx:id="make" mnemonicParsing="false" text="&gt;" />
             <Separator prefHeight="0.0" prefWidth="20.0" />

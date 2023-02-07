@@ -5,7 +5,20 @@ import ru.swarm.dairy.yairy.control.history.subjects.HistorySubject;
 import java.util.ArrayList;
 
 public class History {
+    public static ArrayList<HistorySubject> getHistorySubjects() {
+        return historySubjects;
+    }
+
     private static ArrayList<HistorySubject> historySubjects = new ArrayList<>();
+
+    public static int getIndex() {
+        return index;
+    }
+
+    public static void setIndex(int index) {
+        History.index = index;
+    }
+
     private static int index = 0;
     private History() {}
 
