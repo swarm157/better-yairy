@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Yairy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Yairy_jar</output-path>
+    <root id="archive" name="Yairy.jar">
+      <element id="module-output" name="Yairy" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.2/javafx-graphics-17.0.2-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.2/javafx-fxml-17.0.2-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.23/spring-context-5.3.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.23/spring-jcl-5.3.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.2/javafx-base-17.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.23/spring-aop-5.3.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/17.0.2/javafx-base-17.0.2-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.2/javafx-controls-17.0.2-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.2/javafx-graphics-17.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/17.0.2/javafx-fxml-17.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.23/spring-core-5.3.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.23/spring-expression-5.3.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.9.1/gson-2.9.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/17.0.2/javafx-controls-17.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.1/controlsfx-11.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.5.0/formsfx-core-11.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.23/spring-beans-5.3.23.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
