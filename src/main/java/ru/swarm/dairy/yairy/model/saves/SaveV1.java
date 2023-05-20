@@ -1,6 +1,7 @@
 package ru.swarm.dairy.yairy.model.saves;
 
 import org.apache.commons.io.FileUtils;
+import ru.swarm.dairy.yairy.model.DataProxy;
 import ru.swarm.dairy.yairy.model.data.book.Book;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,7 +43,7 @@ public class SaveV1 implements Save{
         Gson gson = builder.create();
         book.prepareToGson();
         try {
-            FileUtils.writeStringToFile(file, gson.toJson(book));
+            FileUtils.writeStringToFile(file, gson.toJson(book), "UTF-16");
             return true;
         } catch (IOException e) {
             System.out.println(e.getLocalizedMessage());
@@ -54,8 +55,9 @@ public class SaveV1 implements Save{
     public Book load(File file) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
+
         try {
-            String temp = FileUtils.readFileToString(file);
+            String temp = FileUtils.readFileToString(file, "UTF-16");
             var book = gson.fromJson(temp, BookV1.class);
             book.prepareAfterGson();
             return book;

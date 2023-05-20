@@ -19,11 +19,20 @@ public class Boot extends Application {
 
     }
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
         DataProxy.load();
-        PasswordsController.Model.load();
+        try {
+            PasswordsController.Model.load();
+        } catch (Exception e) {
+            DataProxy.log(e);
+        }
         FXMLLoader fxmlLoader = new FXMLLoader(Boot.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 800);
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load(), 600, 800);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         stage.setTitle("Yairy");
         stage.setScene(scene);
         //stage.getIcons().add(new Image("resources/icon.png"));

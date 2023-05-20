@@ -14,10 +14,14 @@ import ru.swarm.dairy.yairy.model.data.page.Page;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
+
+import static java.nio.charset.Charset.availableCharsets;
+import static java.nio.charset.Charset.defaultCharset;
 
 public class PasswordsController {
 
@@ -189,6 +193,7 @@ public class PasswordsController {
 
     public static class Model {
         static ArrayList<String> passwords = new ArrayList<String>();
+        static String fileName = "passwords.dat";
         public static void save() {
             DataProxy.log("Saving passwords...");
             StringBuilder password = new StringBuilder();
@@ -198,9 +203,12 @@ public class PasswordsController {
             }
 
             try {
-                FileUtils.delete(new File("passwords.txt"));
-                FileUtils.touch(new File("passwords.txt"));
-                FileUtils.write(new File("passwords.txt"), CommonMethods.encrypt(password.toString(), "123123"));
+
+                FileUtils.delete(new File(fileName));
+                FileUtils.touch(new File(fileName));
+                String t = CommonMethods.encrypt(password.toString(), "123123");
+                DataProxy.log("DEBUG "+t);
+                FileUtils.write(new File(fileName), t, "UTF-16");
                 DataProxy.log("Successfully");
             } catch (IOException e) {
                 DataProxy.log("Cannot save passwords");
@@ -209,11 +217,16 @@ public class PasswordsController {
         }
         public static void load() {
             try {
-                var temp = CommonMethods.decrypt(FileUtils.readFileToString(new File("passwords.txt")), "123123").split("dddddddd");
+                //var temp = CommonMethods.decrypt(FileUtils.readFileToString(new File("passwords.txt")), "123123").split("dddddddd");
+                //DataProxy.log( availableCharsets());
+                var t = FileUtils.readFileToString(new File(fileName), "UTF-16");
+                DataProxy.log("DEBUG "+t);
+                var temp = CommonMethods.decrypt(t, "123123").split("dddddddd");
+                DataProxy.log("DEBUG "+temp);
                 if (temp!=null) {passwords = new ArrayList<>();Collections.addAll(passwords, temp);} else if(passwords.size()==0) {passwords = new ArrayList<>();passwords.add("123123");}
             } catch (IOException e) {
                 try {
-                    FileUtils.touch(new File("passwords.txt"));
+                    FileUtils.touch(new File(fileName));
                     passwords = new ArrayList<>();
                     passwords.add("123123");
                 } catch (Exception e2) {
